@@ -59,6 +59,10 @@ def get_problem(day):
     problem_text = problem_text.replace("\n", "\n\n")
     problem_text = problem_text.replace("\n\n\n\n", "\n\n")
 
+    if not problem_text:
+        print(f"\nProblem for day {day} has not been posted yet!\n")
+        sys.exit(1)
+
     # Write to file
     # Note: This will overwrite the existing problem file ONLY if
     # the new text is longer than the existing text
