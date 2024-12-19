@@ -42,7 +42,13 @@ def create_dir(day):
 # Get problem and save to file `dayDD/problem.txt`
 def get_problem(day):
     # Parse the HTML
-    response = requests.get(f"https://adventofcode.com/2024/day/{day}")
+    problem_url = f"https://adventofcode.com/2024/day/{day}"
+    input_url = problem_url + "/input"
+
+    print("\nProblem can be found at: ", problem_url)
+    print("Input file can be found at: ", input_url, "\n")
+
+    response = requests.get(problem_url)
     html = response.text
     soup = BeautifulSoup(html, "html.parser")
 
@@ -81,7 +87,6 @@ def get_problem(day):
         print(
             f"File {file_path} already exists with longer text content. Not overwriting."
         )
-
 
 # Make an empty solution file at `dayDD.py`
 def make_solution_file(day):
