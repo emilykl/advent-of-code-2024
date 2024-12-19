@@ -60,7 +60,7 @@ def part2():
     equations = [parse_equation(line) for line in lines]
 
     total = sum([e[0] for e in equations if could_be_true_part2(e)])
-    print("Part 1:", total)
+    print("Part 2:", total)
 
 if __name__ == "__main__":
     part1()
